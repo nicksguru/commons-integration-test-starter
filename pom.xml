@@ -10,9 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- groupId is redundant (inherited from parent), but required by Maven Central -->
-    <groupId>${project.parent.groupId}</groupId>
+    <groupId>guru.nicks.commons</groupId>
     <artifactId>integration-test-starter</artifactId>
-    <version>${project.parent.version}</version>
+    <version>${guru.nicks.commons.version}</version>
 
     <name>Commons Integration Test Starter</name>
     <description>Starter for running integration tests with TestContainers and WireMock</description>
