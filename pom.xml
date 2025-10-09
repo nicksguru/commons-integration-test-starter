@@ -5,7 +5,7 @@
     <parent>
         <groupId>guru.nicks.commons</groupId>
         <artifactId>parent</artifactId>
-        <version>0.1.0-alpha.8</version>
+        <version>0.1.0-alpha.9</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
     <artifactId>integration-test-starter</artifactId>
     <version>${guru.nicks.commons.version}</version>
 
-    <name>Commons Integration Test Starter</name>
+    <name>Nicks.Guru Commons Integration Test Starter</name>
     <description>Starter for running integration tests with TestContainers and WireMock</description>
     <url>https://nicks.guru</url>
 
