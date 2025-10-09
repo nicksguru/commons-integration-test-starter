@@ -1,4 +1,6 @@
-# Integration Test Starter
+# Commons Integration Test Starter
+
+Starter for running integration tests with TestContainers and WireMock.
 
 ## Usage
 

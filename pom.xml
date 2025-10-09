@@ -14,8 +14,8 @@
     <artifactId>integration-test-starter</artifactId>
     <version>${project.parent.version}</version>
 
-    <name>Integration Test Starter</name>
-    <description>Starter for running integration tests TestContainers and WireMock</description>
+    <name>Commons Integration Test Starter</name>
+    <description>Starter for running integration tests with TestContainers and WireMock</description>
     <url>https://nicks.guru</url>
 
     <licenses>
