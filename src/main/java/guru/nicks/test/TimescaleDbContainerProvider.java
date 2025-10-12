@@ -18,7 +18,7 @@ public class TimescaleDbContainerProvider extends JdbcDatabaseContainerProvider 
     /**
      * WARNING: image version must be the same as in the local Docker environment.
      */
-    public static final String DEFAULT_TAG = "pg17.6-ts2.22.0";
+    public static final String DEFAULT_TAG = "pg17.6-ts2.22.1";
 
     public static final String USER_PARAM = "user";
     public static final String PASSWORD_PARAM = "password";
