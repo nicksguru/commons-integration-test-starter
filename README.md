@@ -1,8 +1,8 @@
 # [Nicks.Guru](https://nicks.guru) Commons Integration Test Starter
 
 :rocket:
-![Latest version](https://img.shields.io/maven-central/v/guru.nicks.commons/integration-test-starter?filter=!25.*&label=Latest%20version:&cacheSeconds=7200)
-![Release date](https://img.shields.io/maven-central/last-update/guru.nicks.commons/integration-test-starter?label=&color=orange&cacheSeconds=7200)
+![Latest version](https://img.shields.io/maven-central/v/guru.nicks.commons/integration-test-starter?filter=!25.*&label=Latest%20version:&cacheSeconds=10800)
+![Release date](https://img.shields.io/maven-central/last-update/guru.nicks.commons/integration-test-starter?label=&color=orange&cacheSeconds=10800)
 
 Starter for running integration tests with TestContainers and WireMock.
 
