@@ -1,10 +1,10 @@
-package guru.nicks.test;
+package guru.nicks.commons.test;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.support.GenericApplicationContext;
-import org.testcontainers.containers.MongoDBContainer;
+import org.testcontainers.mongodb.MongoDBContainer;
 
 /**
  * Runs MySQL (version {@value #MONGO_IMAGE}) via TestContainers and sets Spring datasource properties accordingly: URL,

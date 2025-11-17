@@ -1,10 +1,10 @@
-package guru.nicks.test;
+package guru.nicks.commons.test;
 
 import org.testcontainers.containers.JdbcDatabaseContainer;
 import org.testcontainers.containers.JdbcDatabaseContainerProvider;
-import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.containers.TimescaleDBContainerProvider;
 import org.testcontainers.jdbc.ConnectionUrl;
+import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 /**

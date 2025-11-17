@@ -1,4 +1,4 @@
-package guru.nicks.test;
+package guru.nicks.commons.test;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.test.util.TestPropertyValues;

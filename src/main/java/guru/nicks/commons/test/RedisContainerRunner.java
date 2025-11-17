@@ -1,4 +1,4 @@
-package guru.nicks.test;
+package guru.nicks.commons.test;
 
 import com.redis.testcontainers.RedisContainer;
 import lombok.extern.slf4j.Slf4j;

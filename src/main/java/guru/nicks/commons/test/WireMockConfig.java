@@ -1,4 +1,4 @@
-package guru.nicks.test;
+package guru.nicks.commons.test;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

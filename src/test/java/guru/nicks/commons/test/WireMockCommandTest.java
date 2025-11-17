@@ -1,7 +1,4 @@
-package guru.nicks.user;
-
-import guru.nicks.test.WireMockCommand;
-import guru.nicks.test.WireMockConfig;
+package guru.nicks.commons.test;
 
 import com.github.tomakehurst.wiremock.http.HttpHeader;
 import com.github.tomakehurst.wiremock.core.Options;

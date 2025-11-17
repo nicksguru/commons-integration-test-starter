@@ -1,4 +1,4 @@
-package guru.nicks.test;
+package guru.nicks.commons.test;
 
 import com.github.tomakehurst.wiremock.client.MappingBuilder;
 import com.github.tomakehurst.wiremock.http.HttpHeader;
