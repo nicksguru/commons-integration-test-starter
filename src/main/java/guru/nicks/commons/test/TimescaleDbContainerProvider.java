@@ -9,16 +9,13 @@ import org.testcontainers.utility.DockerImageName;
 
 /**
  * Copy-pasted from Testcontainers' {@link TimescaleDBContainerProvider} in order to replace TimescaleDB with
- * TimescaleDB-HA. The only difference from the original class is {@link #DEFAULT_IMAGE} + {@value #DEFAULT_TAG}.
+ * TimescaleDB-HA. The only difference from the original class is {@link #DEFAULT_IMAGE} + {@link #getImageTag()}.
  *
  * @see <a href="https://github.com/timescale/timescaledb-docker-ha">TimescaleDB-HA on GitHub</a>
  */
 public class TimescaleDbContainerProvider extends JdbcDatabaseContainerProvider {
 
-    /**
-     * WARNING: image version must be the same as in the local Docker environment.
-     */
-    public static final String DEFAULT_TAG = "pg17.6-ts2.22.1";
+    public static final String DEFAULT_IMAGE_TAG = "pg18.3-ts2.25.2";
 
     public static final String USER_PARAM = "user";
     public static final String PASSWORD_PARAM = "password";
@@ -27,23 +24,32 @@ public class TimescaleDbContainerProvider extends JdbcDatabaseContainerProvider 
             .asCompatibleSubstituteFor("postgres");
     private static final String NAME = "timescaledb";
 
+    /**
+     * NOTE: subclasses should ensure that this image version matches that in their local Docker environment.
+     *
+     * @return image tag to use for the container ({@value #DEFAULT_IMAGE_TAG})
+     */
+    public String getImageTag() {
+        return DEFAULT_IMAGE_TAG;
+    }
+
     @Override
     public boolean supports(String databaseType) {
         return databaseType.equals(NAME);
     }
 
     @Override
-    public JdbcDatabaseContainer newInstance() {
-        return newInstance(DEFAULT_TAG);
+    public JdbcDatabaseContainer<?> newInstance() {
+        return newInstance(getImageTag());
     }
 
     @Override
-    public JdbcDatabaseContainer newInstance(String tag) {
+    public JdbcDatabaseContainer<?> newInstance(String tag) {
         return new PostgreSQLContainer(DEFAULT_IMAGE.withTag(tag));
     }
 
     @Override
-    public JdbcDatabaseContainer newInstance(ConnectionUrl connectionUrl) {
+    public JdbcDatabaseContainer<?> newInstance(ConnectionUrl connectionUrl) {
         return newInstanceFromConnectionUrl(connectionUrl, USER_PARAM, PASSWORD_PARAM);
     }
 
