@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 
 /**
- * Auto-configuration for integration test utilities including WireMock, TestContainers, and database runners.
+ * Autoconfiguration for integration test utilities including WireMock, TestContainers, and database runners.
  * <p>
  * This configuration automatically registers beans for WireMock stubbing, TestContainers-based database runners, and
  * various database container providers (MySQL, PostgreSQL, MongoDB, Redis, TimescaleDB).
@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Bean;
  */
 @AutoConfiguration
 @Slf4j
-public class WireMockAutoConfiguration {
+public class CommonsTestAutoConfiguration {
 
     /**
      * Creates a {@link MongoContainerRunner} bean if not already defined.
@@ -36,7 +36,7 @@ public class WireMockAutoConfiguration {
     @ConditionalOnMissingBean
     @ConditionalOnClass(MongoContainerRunner.class)
     public MongoContainerRunner mongoContainerRunner() {
-        log.debug("Registering MongoContainerRunner bean");
+        log.debug("Building {} bean", MongoContainerRunner.class.getSimpleName());
         return new MongoContainerRunner();
     }
 
@@ -51,7 +51,7 @@ public class WireMockAutoConfiguration {
     @ConditionalOnMissingBean
     @ConditionalOnClass(MySqlContainerRunner.class)
     public MySqlContainerRunner mySqlContainerRunner() {
-        log.debug("Registering MySqlContainerRunner bean");
+        log.debug("Building {} bean", MySqlContainerRunner.class.getSimpleName());
         return new MySqlContainerRunner();
     }
 
@@ -66,7 +66,7 @@ public class WireMockAutoConfiguration {
     @ConditionalOnMissingBean
     @ConditionalOnClass(PostgreSqlContainerRunner.class)
     public PostgreSqlContainerRunner postgreSqlContainerRunner() {
-        log.debug("Registering PostgreSqlContainerRunner bean");
+        log.debug("Building {} bean", PostgreSqlContainerRunner.class.getSimpleName());
         return new PostgreSqlContainerRunner();
     }
 
@@ -81,7 +81,7 @@ public class WireMockAutoConfiguration {
     @ConditionalOnMissingBean
     @ConditionalOnClass(RedisContainerRunner.class)
     public RedisContainerRunner redisContainerRunner() {
-        log.debug("Registering RedisContainerRunner bean");
+        log.debug("Building {} bean", RedisContainerRunner.class.getSimpleName());
         return new RedisContainerRunner();
     }
 
@@ -96,7 +96,7 @@ public class WireMockAutoConfiguration {
     @ConditionalOnMissingBean
     @ConditionalOnClass(TimescaleDbContainerProvider.class)
     public TimescaleDbContainerProvider timescaleDbContainerProvider() {
-        log.debug("Registering TimescaleDbContainerProvider bean");
+        log.debug("Building {} bean", TimescaleDbContainerProvider.class.getSimpleName());
         return new TimescaleDbContainerProvider();
     }
 
