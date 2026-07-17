@@ -14,7 +14,7 @@ import org.testcontainers.mongodb.MongoDBContainer;
 @Slf4j
 public class MongoContainerRunner implements ApplicationContextInitializer<GenericApplicationContext> {
 
-    public static final String MONGO_IMAGE = "mongo:7.0.15";
+    public static final String MONGO_IMAGE = "mongo:8.0.4";
 
     @Override
     public void initialize(GenericApplicationContext applicationContext) {
