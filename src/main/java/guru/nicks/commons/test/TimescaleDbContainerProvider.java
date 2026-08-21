@@ -15,7 +15,7 @@ import org.testcontainers.utility.DockerImageName;
  */
 public class TimescaleDbContainerProvider extends JdbcDatabaseContainerProvider {
 
-    public static final String DEFAULT_IMAGE_TAG = "pg18.4-ts2.28.2";
+    public static final String DEFAULT_IMAGE_TAG = "pg18.4-ts2.29.2";
 
     public static final String USER_PARAM = "user";
     public static final String PASSWORD_PARAM = "password";
