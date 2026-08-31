@@ -59,6 +59,12 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
         </dependency>
+        <!-- Cucumber test infrastructure: runner base, common steps, worlds -->
+        <dependency>
+            <groupId>guru.nicks.commons</groupId>
+            <artifactId>cucumber-test-starter</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- TestContainers -->
         <dependency>
