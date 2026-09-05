@@ -18,10 +18,13 @@ public class TimescaleDbContainerProvider extends JdbcDatabaseContainerProvider 
     public static final String DEFAULT_IMAGE_TAG = "pg18.4-ts2.29.2";
 
     public static final String USER_PARAM = "user";
+
     public static final String PASSWORD_PARAM = "password";
+
     public static final DockerImageName DEFAULT_IMAGE = DockerImageName
             .parse("timescale/timescaledb-ha")
             .asCompatibleSubstituteFor("postgres");
+
     private static final String NAME = "timescaledb";
 
     /**
