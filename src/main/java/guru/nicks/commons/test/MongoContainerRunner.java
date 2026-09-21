@@ -17,7 +17,7 @@ import org.testcontainers.mongodb.MongoDBContainer;
 @Slf4j
 public class MongoContainerRunner implements ApplicationContextInitializer<GenericApplicationContext> {
 
-    public static final String IMAGE_TAG = "mongo:8.3.8";
+    public static final String IMAGE_TAG = "mongo:8.3.11";
 
     private static final MongoDBContainer CONTAINER = new MongoDBContainer(IMAGE_TAG);
 
