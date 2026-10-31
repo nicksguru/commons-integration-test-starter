@@ -5,14 +5,14 @@
     <parent>
         <groupId>guru.nicks.commons</groupId>
         <artifactId>parent</artifactId>
-        <version>100.261014.0</version><!-- BUNDLE_VERSION -->
+        <version>400.261031.0</version><!-- BUNDLE_VERSION -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <!-- groupId is redundant (inherited from parent), but required by Maven Central -->
     <groupId>guru.nicks.commons</groupId>
     <artifactId>integration-test-starter</artifactId>
-    <version>100.261014.0</version><!-- BUNDLE_VERSION -->
+    <version>400.261031.0</version><!-- BUNDLE_VERSION -->
 
     <name>Nicks.Guru Commons Integration Test Starter</name>
     <description>Starter for running integration tests with TestContainers and WireMock</description>
@@ -46,6 +46,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test-autoconfigure</artifactId>
+        </dependency>
+        <!-- RestTemplateBuilder (moved out of spring-boot-test-autoconfigure's classpath in Boot 4) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-restclient</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -92,9 +98,17 @@
             <artifactId>testcontainers-kafka</artifactId>
         </dependency>
 
+        <!-- WireMock client API (com.github.tomakehurst.wiremock.*) is used by main code; also provides
+             @EnableWireMock test support (successor of spring-cloud-contract-wiremock's @AutoConfigureWireMock,
+             which disappeared from spring-cloud-contract 5.x) -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-contract-wiremock</artifactId>
+            <groupId>org.wiremock.integrations</groupId>
+            <artifactId>wiremock-spring-boot</artifactId>
+        </dependency>
+        <!-- HttpMethod/HttpStatus etc. (came transitively from spring-cloud-contract-wiremock before Boot 4) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
 
         <!-- declarations of @NotBlank etc. and Hibernate Validator that processes them, plus ValidationException -->

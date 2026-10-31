@@ -18,7 +18,7 @@ import org.testcontainers.containers.MySQLContainerProvider;
 @Slf4j
 public class MySqlContainerRunner implements ApplicationContextInitializer<GenericApplicationContext> {
 
-    public static final String MYSQL_VERSION = "9.3.0";
+    public static final String MYSQL_VERSION = "9.7.4";
 
     private static final JdbcDatabaseContainer<?> CONTAINER = new MySQLContainerProvider().newInstance(MYSQL_VERSION);
 
