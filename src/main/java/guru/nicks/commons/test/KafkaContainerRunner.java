@@ -17,7 +17,7 @@ import org.testcontainers.kafka.KafkaContainer;
 @Slf4j
 public class KafkaContainerRunner implements ApplicationContextInitializer<GenericApplicationContext> {
 
-    public static final String IMAGE_TAG = "apache/kafka:3.8.0";
+    public static final String IMAGE_TAG = "apache/kafka:4.4.0";
 
     /**
      * 3.9.0 is broken: its entrypoint fails env-based {@code advertised.listeners} setup with 'advertised.listeners

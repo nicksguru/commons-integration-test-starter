@@ -16,7 +16,7 @@ import org.springframework.context.support.GenericApplicationContext;
 @Slf4j
 public class RedisContainerRunner implements ApplicationContextInitializer<GenericApplicationContext> {
 
-    public static final String IMAGE_TAG = "redis:8.10.1-alpine";
+    public static final String IMAGE_TAG = "redis:8.10.3-alpine";
 
     private static final RedisContainer CONTAINER = new RedisContainer(IMAGE_TAG);
 
