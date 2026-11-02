@@ -17,9 +17,14 @@ import org.testcontainers.mongodb.MongoDBContainer;
 @Slf4j
 public class MongoContainerRunner implements ApplicationContextInitializer<GenericApplicationContext> {
 
-    public static final String IMAGE_TAG = "mongo:8.3.11";
+    public static final String IMAGE_TAG = "mongo:9.0.4";
 
-    private static final MongoDBContainer CONTAINER = new MongoDBContainer(IMAGE_TAG);
+    /**
+     * WARNING: Testcontainers 2.x, unlike 1.x, runs a standalone mongod unless a replica set is requested explicitly.
+    * Without it, Mongo transactions (such as transactional DB migrations) fail with error 20
+    * (IllegalOperation): 'Transaction numbers are only allowed on a replica set member or mongos'.
+     */
+    private static final MongoDBContainer CONTAINER = new MongoDBContainer(IMAGE_TAG).withReplicaSet();
 
     private static boolean started;
 
